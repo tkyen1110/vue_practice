@@ -10,12 +10,12 @@ SCRIPT_PATH=$(dirname "$SCRIPT")
 # Absolute path to the AOI path
 # e.g. /home/ubuntu/workspaces/AOI_LinKou_Inference
 HOST_PATH=$(dirname "$SCRIPT_PATH")
-echo "HOST_PATH  = "$HOST_PATH
+echo "HOST_PATH      = "$HOST_PATH
 
 # AOI directory name
 IFS='/' read -a array <<< "$HOST_PATH"
 HOST_DIR_NAME="${array[-1]}"
-echo "HOST_DIR_NAME   = "$HOST_DIR_NAME
+echo "HOST_DIR_NAME  = "$HOST_DIR_NAME
 
 
 VERSION=$2
@@ -30,7 +30,7 @@ echo "VERSION        = "$VERSION
 PROJECT_NAME="vuetify"
 DOCKERFILE_NAME="dockerfile_$PROJECT_NAME"
 IMAGE_NAME="$PROJECT_NAME:$VERSION"
-CONTAINER_NAME="$PROJECT_NAME_$VERSION"
+CONTAINER_NAME=$PROJECT_NAME"_"$VERSION
 echo "IMAGE_NAME     = "$IMAGE_NAME
 echo "CONTAINER_NAME = "$CONTAINER_NAME
 
